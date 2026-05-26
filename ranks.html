@@ -12,65 +12,138 @@ body{
 background:#05010a;
 color:white;
 font-family:Arial,sans-serif;
+overflow-x:hidden;
 }
 
+/* Background Glow */
+.bg-glow{
+position:fixed;
+width:600px;
+height:600px;
+background:#ef4444;
+filter:blur(180px);
+opacity:0.12;
+top:-200px;
+right:-200px;
+z-index:-1;
+}
+
+/* Cards */
 .card{
 background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
+border:1px solid rgba(239,68,68,0.15);
 backdrop-filter:blur(12px);
-transition:0.3s;
+transition:0.35s;
+position:relative;
+overflow:hidden;
 }
 
 .card:hover{
-transform:translateY(-5px);
-box-shadow:0 0 30px rgba(168,85,247,0.4);
+transform:translateY(-8px) scale(1.02);
+border-color:#ef4444;
+box-shadow:0 0 40px rgba(239,68,68,0.45);
 }
 
+/* Shine Effect */
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.08),
+transparent
+);
+transition:0.6s;
+}
+
+.card:hover::before{
+left:100%;
+}
+
+/* Buttons */
 .buy-btn{
-background:linear-gradient(90deg,#a855f7,#d946ef);
+background:linear-gradient(90deg,#dc2626,#ef4444);
 transition:0.3s;
 }
 
 .buy-btn:hover{
-transform:scale(1.03);
+transform:scale(1.04);
+box-shadow:0 0 25px rgba(239,68,68,0.7);
 }
 
+/* Glow */
 .glow{
 text-shadow:
-0 0 10px #c026d3,
-0 0 20px #c026d3;
+0 0 10px #ef4444,
+0 0 20px #ef4444,
+0 0 40px #ef4444;
+}
+
+/* Navbar */
+.nav-link{
+transition:0.3s;
+}
+
+.nav-link:hover{
+color:#f87171;
+}
+
+/* Premium Card */
+.best{
+border:2px solid #ef4444;
+box-shadow:0 0 35px rgba(239,68,68,0.3);
 }
 </style>
 </head>
 
 <body>
 
+<div class="bg-glow"></div>
+
 <!-- NAVBAR -->
-<nav class="flex justify-between items-center px-6 py-4 border-b border-fuchsia-500">
+<nav class="flex justify-between items-center px-6 py-5 border-b border-red-500/30 backdrop-blur-xl sticky top-0 bg-black/30 z-50">
 
 <div class="flex items-center gap-3">
+
 <img src="logo.png" class="w-12 h-12 rounded-xl">
-<h1 class="text-2xl font-bold">
-SPARROW<span class="text-fuchsia-500 glow">MC</span>
+
+<h1 class="text-2xl font-black">
+SPARROW<span class="text-red-400 glow">MC</span>
 </h1>
+
 </div>
 
 <div class="flex gap-6 font-bold text-sm">
-<a href="index.html">HOME</a>
-<a href="shop.html">SHOP</a>
-<a href="ranks.html" class="text-fuchsia-400">RANKS</a>
+
+<a href="index.html" class="nav-link">
+HOME
+</a>
+
+<a href="shop.html" class="nav-link">
+SHOP
+</a>
+
+<a href="ranks.html" class="text-red-400 glow">
+RANKS
+</a>
+
 </div>
 
 </nav>
 
 <!-- TITLE -->
-<section class="text-center py-16">
+<section class="text-center py-16 px-6">
 
-<h1 class="text-6xl font-black">
-SERVER <span class="text-fuchsia-500 glow">RANKS</span>
+<h1 class="text-6xl md:text-7xl font-black">
+SERVER <span class="text-red-400 glow">RANKS</span>
 </h1>
 
-<p class="text-gray-400 mt-4 text-lg">
+<p class="text-gray-400 mt-5 text-lg">
 Purchase powerful Lifesteal ranks
 </p>
 
@@ -197,18 +270,20 @@ BUY NOW
 </div>
 
 <!-- SPARROW+ -->
-<div class="card rounded-3xl p-8 text-center border border-fuchsia-500">
-<h2 class="text-3xl font-bold text-fuchsia-400 glow">
+<div class="card best rounded-3xl p-8 text-center">
+
+<h2 class="text-3xl font-bold text-red-400 glow">
 SPARROW+ 👑
 </h2>
 
-<div class="text-5xl font-black mt-6 text-fuchsia-400">
+<div class="text-5xl font-black mt-6 text-red-400">
 ₹999
 </div>
 
 <button class="buy-btn w-full py-4 rounded-2xl mt-8 text-xl font-bold">
 BUY NOW
 </button>
+
 </div>
 
 </section>
