@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SparrowMC Shop</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+background:#05010a;
+color:white;
+font-family:Arial,sans-serif;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+box-shadow:0 0 30px rgba(168,85,247,0.4);
+}
+
+.btn{
+background:linear-gradient(90deg,#a855f7,#d946ef);
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.03);
+}
+
+.glow{
+text-shadow:
+0 0 10px #c026d3,
+0 0 20px #c026d3;
+}
+</style>
+</head>
+
+<body>
+
+<section class="py-20 px-6">
+
+<h1 class="text-center text-6xl font-bold mb-16">
+SPARROW <span class="text-purple-500 glow">SHOP</span>
+</h1>
+
+<div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-10">
+
+<!-- RANKS -->
+<div class="card rounded-3xl p-8 text-center">
+<h2 class="text-4xl font-bold">
+RANKS
+</h2>
+
+<p class="text-gray-400 mt-4">
+Buy powerful Lifesteal ranks
+</p>
+
+<a href="ranks.html">
+<button class="btn w-full py-4 rounded-2xl mt-8 text-xl font-bold">
+VIEW RANKS
+</button>
+</a>
+</div>
+
+<!-- COINS -->
+<div class="card rounded-3xl p-8 text-center">
+<h2 class="text-4xl font-bold">
+COINS
+</h2>
+
+<p class="text-gray-400 mt-4">
+Purchase server coins
+</p>
+
+<a href="coins.html">
+<button class="btn w-full py-4 rounded-2xl mt-8 text-xl font-bold">
+VIEW COINS
+</button>
+</a>
+</div>
+
+<!-- CRATES -->
+<div class="card rounded-3xl p-8 text-center">
+<h2 class="text-4xl font-bold">
+CRATES
+</h2>
+
+<p class="text-gray-400 mt-4">
+Open rare rewards
+</p>
+
+<a href="crates.html">
+<button class="btn w-full py-4 rounded-2xl mt-8 text-xl font-bold">
+VIEW CRATES
+</button>
+</a>
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

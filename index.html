@@ -1,14 +1,291 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SPARROW MC</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+
+body{
+background:#05010a;
+color:white;
+font-family:Arial;
+overflow-x:hidden;
+}
+
+.glow{
+text-shadow:
+0 0 10px #a020f0,
+0 0 20px #a020f0,
+0 0 40px #a020f0;
+}
+
+.card{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+}
+
+.purple-btn{
+background:linear-gradient(90deg,#b81cff,#d946ef);
+transition:0.3s;
+box-shadow:0 0 20px rgba(168,85,247,0.4);
+}
+
+.purple-btn:hover{
+transform:translateY(-3px) scale(1.03);
+box-shadow:0 0 35px rgba(217,70,239,0.7);
+}
+
+.blur{
+position:fixed;
+width:700px;
+height:700px;
+border-radius:50%;
+background:radial-gradient(circle,#b81cff55,transparent 70%);
+filter:blur(100px);
+z-index:-1;
+animation:float 10s infinite alternate;
+}
+
+.left{
+top:-150px;
+left:-150px;
+}
+
+.right{
+bottom:-150px;
+right:-150px;
+}
+
+@keyframes float{
+from{
+transform:translateY(0px);
+}
+to{
+transform:translateY(50px);
+}
+}
+
+.minecraft{
+image-rendering:pixelated;
+}
+
+</style>
+
 </head>
+
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+
+<div class="blur left"></div>
+<div class="blur right"></div>
+
+<nav class="border-b border-fuchsia-800/40 bg-black/60 backdrop-blur-xl">
+
+<div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+
+<div class="flex items-center gap-3">
+
+<img
+src="https://files.catbox.moe/92301.png"
+class="w-12 h-12 rounded-xl minecraft"
+>
+
+<h1 class="text-3xl font-black">
+SPARROW<span class="text-fuchsia-500 glow">MC</span>
+</h1>
+
+</div>
+
+<div class="hidden md:flex gap-10 font-bold text-sm">
+
+<a href="#" class="hover:text-fuchsia-400">HOME</a>
+<a href="#store" class="hover:text-fuchsia-400">STORE</a>
+<a href="#" class="hover:text-fuchsia-400">STATUS</a>
+<a href="#" class="hover:text-fuchsia-400">DISCORD</a>
+
+</div>
+
+</div>
+
+</nav>
+
+<section class="min-h-screen flex items-center justify-center px-6">
+
+<div class="text-center max-w-5xl">
+
+<img
+src="https://files.catbox.moe/92301.png"
+class="w-40 mx-auto mb-10 minecraft"
+>
+
+<h1 class="text-6xl md:text-8xl font-black leading-tight">
+WELCOME TO
+</h1>
+
+<h1 class="text-6xl md:text-8xl font-black glow text-fuchsia-500">
+SPARROW MC
+</h1>
+
+<p class="text-gray-300 text-xl mt-8">
+The Ultimate Minecraft Lifesteal Experience
+</p>
+
+<div class="mt-8 inline-flex items-center gap-3 bg-white/5 border border-white/10 px-8 py-4 rounded-full">
+
+<div class="w-3 h-3 bg-green-500 rounded-full"></div>
+
+<p class="font-bold">
+ONLINE • 124 PLAYERS
+</p>
+
+</div>
+
+<div class="flex flex-wrap justify-center gap-6 mt-12">
+
+  <a
+  href="shop.html"
+  class="purple-btn px-12 py-5 rounded-2xl font-bold"
+  >
+  SHOP NOW
+  </a>
+
+<a
+href="#"
+class="bg-white/10 px-12 py-5 rounded-2xl font-black text-lg border border-white/10 hover:bg-white/20 transition"
+>
+JOIN DISCORD
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="store" class="max-w-6xl mx-auto px-6 pb-32">
+
+<h2 class="text-6xl font-black mb-16">
+MONEY <span class="text-fuchsia-500 glow">PLANS</span>
+</h2>
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<a href="ranks.html" class="card rounded-3xl p-10 block hover:scale-105 transition">
+
+<h3 class="text-4xl font-black">
+RANKS
+</h3>
+
+<p class="text-gray-400 mt-3">
+Unlock premium ranks
+</p>
+
+<button class="purple-btn mt-10 w-full py-4 rounded-2xl font-black">
+VIEW RANKS
+</button>
+
+</a>
+
+<a href="coins.html" class="card rounded-3xl p-10 block hover:scale-105 transition">
+
+<h3 class="text-4xl font-black">
+COINS
+</h3>
+
+<p class="text-gray-400 mt-3">
+Purchase server coins
+</p>
+
+<button class="purple-btn mt-10 w-full py-4 rounded-2xl font-black">
+VIEW COINS
+</button>
+
+</a>
+
+<a href="crates.html" class="card rounded-3xl p-10 block hover:scale-105 transition">
+
+<h3 class="text-4xl font-black">
+CRATES
+</h3>
+
+<p class="text-gray-400 mt-3">
+Exclusive crate keys
+</p>
+
+<button class="purple-btn mt-10 w-full py-4 rounded-2xl font-black">
+VIEW CRATES
+</button>
+
+</a>
+
+</div>
+
+</section>
+
+<section class="max-w-6xl mx-auto px-6 pb-32">
+
+<h2 class="text-6xl font-black mb-16">
+INVITE <span class="text-fuchsia-500 glow">REWARDS</span>
+</h2>
+
+<div class="grid md:grid-cols-3 gap-10">
+
+<div class="card rounded-3xl p-10">
+
+<h3 class="text-4xl font-black">
+INVITE RANKS
+</h3>
+
+<p class="text-gray-400 mt-3">
+Earn ranks by inviting players
+</p>
+
+<button class="purple-btn mt-10 w-full py-4 rounded-2xl font-black">
+VIEW REWARDS
+</button>
+
+</div>
+
+<div class="card rounded-3xl p-10">
+
+<h3 class="text-4xl font-black">
+INVITE COINS
+</h3>
+
+<p class="text-gray-400 mt-3">
+Earn coins by inviting players
+</p>
+
+<button class="purple-btn mt-10 w-full py-4 rounded-2xl font-black">
+VIEW REWARDS
+</button>
+
+</div>
+
+<div class="card rounded-3xl p-10">
+
+<h3 class="text-4xl font-black">
+INVITE KEYS
+</h3>
+
+<p class="text-gray-400 mt-3">
+Earn crate keys by inviting players
+</p>
+
+<button class="purple-btn mt-10 w-full py-4 rounded-2xl font-black">
+VIEW REWARDS
+</button>
+
+</div>
+
+</div>
+
+</section>
+
 </body>
 </html>
